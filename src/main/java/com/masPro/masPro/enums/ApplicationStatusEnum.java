@@ -1,7 +1,9 @@
 package com.masPro.masPro.enums;
 
+import java.util.ArrayList;
+
 public enum ApplicationStatusEnum {
-    DONE(1), INPROGRESS(2), REFUSAL(3);
+    DONE(1), IN_PROGRESS(2), REFUSAL(3);
 
     private Integer value;
 
@@ -24,5 +26,13 @@ public enum ApplicationStatusEnum {
 
     public Integer getValue() {
         return value;
+    }
+
+    public static String[] getStringArray(){
+        ArrayList<String> enumList = new ArrayList<>();
+        for (ApplicationStatusEnum applicationStatusEnum : ApplicationStatusEnum.values()) {
+            enumList.add(applicationStatusEnum.name()) ;
+        }
+        return enumList.toArray(new String[enumList.size()]);
     }
 }

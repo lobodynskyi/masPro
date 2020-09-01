@@ -18,12 +18,12 @@ public class Client extends Osoba{
     @Column(name="allergy")
     private String allergy;
 
-//    @OneToMany(
-//            mappedBy = "client",
-//            cascade = CascadeType.ALL,
-//            orphanRemoval = true
-//    )
-//    private List<Consultation> consultList;
+    @OneToMany(
+            mappedBy = "client",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<Consultation> consultList;
 
     @OneToMany(
             mappedBy = "client",
@@ -31,14 +31,14 @@ public class Client extends Osoba{
             orphanRemoval = true,
             cascade = CascadeType.ALL
     )
-    private List<Application> applicationListList = new ArrayList<>();
+    private List<Application> applications = new ArrayList<>();
 
-//    @OneToMany(
-//            mappedBy = "client",
-//            cascade = CascadeType.ALL,
-//            orphanRemoval = true
-//    )
-//    private List<RezResearch> rezResearchListList;
+    @OneToMany(
+            mappedBy = "client",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<RezResearch> rezResearchListList;
 
     public Client() {
     }
@@ -68,12 +68,12 @@ public class Client extends Osoba{
         this.allergy = allergy;
     }
 
-    public List<Application> getApplicationListList() {
-        return applicationListList;
+    public List<Application> getApplications() {
+        return applications;
     }
 
-    private void setApplicationListList(List<Application> applicationListList) {
-        this.applicationListList = applicationListList;
+    private void setApplications(List<Application> applications) {
+        this.applications = applications;
     }
 
     @Override

@@ -1,5 +1,7 @@
 package com.masPro.masPro.enums;
 
+import java.util.ArrayList;
+
 public enum BloodTestEnum {
     GENERAL(1), BIOCHEMICAL(2), HORMONAL(3);
 
@@ -24,6 +26,14 @@ public enum BloodTestEnum {
 
     public Integer getValue() {
         return value;
+    }
+
+    public static String[] getStringArray(){
+        ArrayList<String> enumList = new ArrayList<>();
+        for (BloodTestEnum bloodTestEnum : BloodTestEnum.values()) {
+            enumList.add(bloodTestEnum.name()) ;
+        }
+        return enumList.toArray(new String[enumList.size()]);
     }
 }
 

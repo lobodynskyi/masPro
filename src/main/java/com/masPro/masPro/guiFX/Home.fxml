@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <VBox prefHeight="437.0" prefWidth="191.0" style="-fx-background-color: #1f58b5;" BorderPane.alignment="CENTER">
+               <children>
+                  <Button id="addClientBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="25.0" prefWidth="193.0" style="-fx-background-color: #212969;" text="Clients" textFill="#ebeaea">
+                     <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../style/icons/icons8_person_32px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button id="addApplicationBtn" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="193.0" style="-fx-background-color: #212969;" text="Applications" textFill="#ebeaea">
+                     <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </Button>
+                  <Button id="addInfoBtn" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="193.0" style="-fx-background-color: #212969;" text="Info" textFill="#ebeaea">
+                     <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../style/icons/icons8_info_32px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+         </left>
+         <top>
+            <BorderPane BorderPane.alignment="CENTER">
+               <center>
+                  <HBox prefHeight="63.0" prefWidth="750.0" style="-fx-background-color: #ffffff;" />
+               </center>
+               <left>
+                  <Label text="Virtual hEALS" BorderPane.alignment="CENTER" />
+               </left>
+            </BorderPane>
+         </top>
+         <center>
+            <TabPane BorderPane.alignment="CENTER">
+               <tabs>
+                  <Tab id="client_tab" text="clients">
+                     <content>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                           <top>
+                              <VBox BorderPane.alignment="CENTER">
+                                 <children>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <TextField promptText="NAME" />
+                                          <TextField />
+                                          <DatePicker />
+                                          <DatePicker />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </top>
+                           <center>
+                              <TableView id="clientsTableId" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                <columns>
+                                  <TableColumn prefWidth="75.0" text="name" />
+                                  <TableColumn prefWidth="75.0" text="lastName" />
+                                    <TableColumn prefWidth="75.0" text="phoneNr" />
+                                    <TableColumn prefWidth="75.0" text="email" />
+                                    <TableColumn prefWidth="75.0" text="pasel" />
+                                    <TableColumn prefWidth="75.0" text="birthday" />
+                                    <TableColumn prefWidth="75.0" text="discount" />
+                                    <TableColumn prefWidth="75.0" text="allergy" />
+                                </columns>
+                              </TableView>
+                           </center>
+                        </BorderPane>
+                     </content>
+                  </Tab>
+                  <Tab id="applications_tab" text="application">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                  </Tab>
+                  <Tab id="info_tab" text="info">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                  </Tab>
+               </tabs>
+            </TabPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

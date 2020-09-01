@@ -8,7 +8,7 @@ import java.time.LocalDate;
 
 @Entity(name = "nurse")
 @DiscriminatorValue(value = "nurse")
-public class Nurse extends Pracownik {
+public class Nurse extends Worker {
 
     @Column(name="courses")
     private String courses;

@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 @Entity(name = "pracownik")
 @DiscriminatorValue(value = "pracownik")
-public abstract class Pracownik extends Osoba {
+public abstract class Worker extends Osoba {
 
     @Column(name="dateEmployment")
     private LocalDate dateEmployment;
@@ -21,10 +21,10 @@ public abstract class Pracownik extends Osoba {
     @Column(name="minSalary")
     private float minSalary;
 
-    public Pracownik() {
+    public Worker() {
     }
 
-    public Pracownik(String name, String lastName, int phoneNr, String email, String pasel, LocalDate birthday, LocalDate dateEmployment, float salary, float minSalary) {
+    public Worker(String name, String lastName, int phoneNr, String email, String pasel, LocalDate birthday, LocalDate dateEmployment, float salary, float minSalary) {
         super(name, lastName, phoneNr, email, pasel, birthday);
         this.dateEmployment = dateEmployment;
         this.salary = salary;

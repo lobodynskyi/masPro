@@ -1,8 +1,10 @@
 package com.masPro.masPro.enums;
 
+import java.util.ArrayList;
+
 public enum ResultDeliveryEnum {
 
-    EMAIL(1), INCLINIC(2);
+    EMAIL(1), IN_CLINIC(2);
 
     private Integer value;
 
@@ -25,5 +27,13 @@ public enum ResultDeliveryEnum {
 
     public Integer getValue() {
         return value;
+    }
+
+    public static String[] getStringArray(){
+        ArrayList<String> enumList = new ArrayList<>();
+        for (ResultDeliveryEnum resultDeliveryEnum : ResultDeliveryEnum.values()) {
+            enumList.add(resultDeliveryEnum.name()) ;
+        }
+        return enumList.toArray(new String[enumList.size()]);
     }
 }

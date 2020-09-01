@@ -1,5 +1,8 @@
 package com.masPro.masPro.enums;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public enum PaymentTypeEnum {
 
     CARD(1), CASH(2);
@@ -25,5 +28,13 @@ public enum PaymentTypeEnum {
 
     public Integer getValue() {
         return value;
+    }
+
+    public static String[] getStringArray(){
+        ArrayList<String> enumList = new ArrayList<>();
+        for (PaymentTypeEnum paymentTypeEnum : PaymentTypeEnum.values()) {
+            enumList.add(paymentTypeEnum.name()) ;
+        }
+        return enumList.toArray(new String[enumList.size()]);
     }
 }

@@ -1,18 +1,15 @@
 package com.masPro.masPro;
 
-import com.masPro.masPro.controller.CreateApplicationController;
 import com.masPro.masPro.controller.MainMenuController;
-import com.masPro.masPro.gui.CreateApplicationWindow;
-import com.masPro.masPro.gui.MainMenuWindow;
 import com.masPro.masPro.model.Application;
 import com.masPro.masPro.model.Client;
-import com.masPro.masPro.service.ClientService;
+import com.masPro.masPro.model.Nurse;
+import com.masPro.masPro.service.serviceImpl.ClientServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 
-import javax.swing.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -20,7 +17,7 @@ import java.time.LocalDateTime;
 public class MasProApplication implements CommandLineRunner {
 
     @Autowired
-    ClientService clientService;
+    ClientServiceImpl clientServiceImpl;
 
     @Autowired
     MainMenuController mainMenuController;
@@ -36,25 +33,22 @@ public class MasProApplication implements CommandLineRunner {
 
     public void run(String... args) throws Exception {
 
-        Client client = new Client("Adam", "Smith", 12442, "smith@gmail.com", "5458736", LocalDate.now(), 5, "safasf", "brak");
+//        Client client1 = new Client("Adam", "Smith", 124492, "smith@gmail.com", "41120451477", LocalDate.now(), 5, "safasf", "brak");
+//        client1.getApplications().add(new Application(2,1,1, LocalDateTime.now(), 1,client1));
+//        client1.getApplications().add(new Application(1,1,1,LocalDateTime.now(),  2,client1));
+//        client1.getApplications().add(new Application(2,2,2,LocalDateTime.now(),  1,client1));
+//        client1.getApplications().add(new Application(3,1,2,LocalDateTime.now(),  1,client1));
+//        clientServiceImpl.save(client1);
+//
+//        Client client2 = new Client("Miya", "Jackson", 885566, "jack@gmail.com", "74062129489", LocalDate.now(), 10, "safasf", "brak");
+//        client2.getApplications().add(new Application(2,1,1, LocalDateTime.now(), 3,client2));
+//        clientServiceImpl.save(client2);
 
-        client.getApplicationListList().add(new Application(2,1,1, LocalDateTime.now(), 1,client));
-        client.getApplicationListList().add(new Application(1,1,1,LocalDateTime.now(),  2,client));
-        client.getApplicationListList().add(new Application(2,2,2,LocalDateTime.now(),  1,client));
-        client.getApplicationListList().add(new Application(3,1,2,LocalDateTime.now(),  1,client));
-
-
-        clientService.save(client);
-
-        clientService.getAll().stream().forEach(System.out::println);
-
-        clientService.findById(1).ifPresent(System.out::println);
-        clientService.findById(3).ifPresent(System.out::println);
-
-		System.out.println(client.getApplicationListList());
+        Nurse nurse = new Nurse("Jess", "Fox",548465665,"jessFox@gmail.com","10110586701",LocalDate.now(),LocalDate.now(),5500,3000,"","");
 
 
-        mainMenuController.initialize(client);
+        mainMenuController.initialize();
+        mainMenuController.setNurse(nurse);
 
     }
 

@@ -26,10 +26,10 @@ public abstract class Osoba {
     @Column(name = "phoneNr")
     private int phoneNr;
 
-    @Column(name = "email")
+    @Column(name = "email", unique = true)
     private String email;
 
-    @Column(name = "pasel")
+    @Column(name = "pasel", unique = true)
     private String pasel;
 
     @Column(name = "birthday")
